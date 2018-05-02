@@ -1,7 +1,7 @@
 ﻿@model PaginatedList<ControllerUniversity.Models.Student>
 
 @{
-  ViewData["Title"] = "Index";
+  ViewData["Title"] = "Students";
 }
 
 <h2>Index</h2>
@@ -24,7 +24,7 @@
   <thead>
     <tr>
       <th>
-        <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">First Name</a>
+        <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Name</a>
       </th>
       <th>
         Last Name
