@@ -1,0 +1,11 @@
+C:\Users\CNDEV88\source\repos\ControllerUniversity\ControllerUniversity\bin\Debug\netcoreapp2.0\ControllerUniversity.deps.json
+C:\Users\CNDEV88\source\repos\ControllerUniversity\ControllerUniversity\bin\Debug\netcoreapp2.0\ControllerUniversity.runtimeconfig.json
+C:\Users\CNDEV88\source\repos\ControllerUniversity\ControllerUniversity\bin\Debug\netcoreapp2.0\ControllerUniversity.runtimeconfig.dev.json
+C:\Users\CNDEV88\source\repos\ControllerUniversity\ControllerUniversity\bin\Debug\netcoreapp2.0\ControllerUniversity.dll
+C:\Users\CNDEV88\source\repos\ControllerUniversity\ControllerUniversity\bin\Debug\netcoreapp2.0\ControllerUniversity.pdb
+C:\Users\CNDEV88\source\repos\ControllerUniversity\ControllerUniversity\obj\Debug\netcoreapp2.0\ControllerUniversity.csprojResolveAssemblyReference.cache
+C:\Users\CNDEV88\source\repos\ControllerUniversity\ControllerUniversity\obj\Debug\netcoreapp2.0\ControllerUniversity.csproj.CoreCompileInputs.cache
+C:\Users\CNDEV88\source\repos\ControllerUniversity\ControllerUniversity\obj\Debug\netcoreapp2.0\ControllerUniversity.AssemblyInfoInputs.cache
+C:\Users\CNDEV88\source\repos\ControllerUniversity\ControllerUniversity\obj\Debug\netcoreapp2.0\ControllerUniversity.AssemblyInfo.cs
+C:\Users\CNDEV88\source\repos\ControllerUniversity\ControllerUniversity\obj\Debug\netcoreapp2.0\ControllerUniversity.dll
+C:\Users\CNDEV88\source\repos\ControllerUniversity\ControllerUniversity\obj\Debug\netcoreapp2.0\ControllerUniversity.pdb
