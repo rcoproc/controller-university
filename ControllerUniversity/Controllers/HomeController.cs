@@ -8,6 +8,7 @@ using ControllerUniversity.Models;
 using Microsoft.EntityFrameworkCore;
 using ControllerUniversity.Dados;
 using ControllerUniversity.Models.SchoolViewModels;
+using System.Data.Common;
 
 namespace ControllerUniversity.Controllers
 {
@@ -27,16 +28,46 @@ namespace ControllerUniversity.Controllers
 
         public  async Task<ActionResult> About()
         {
-            IQueryable<EnrollmentDateGroup> data =
-                from student in _context.Students
-                group student by student.EnrollmentDate into dateGroup
-                select new EnrollmentDateGroup()
-            {
-                EnrollmentDate = dateGroup.Key,
-                StudentCount = dateGroup.Count()
-            };
+            //IQueryable<EnrollmentDateGroup> data =
+            //    from student in _context.Students
+            //    group student by student.EnrollmentDate into dateGroup
+            //    select new EnrollmentDateGroup()
+            //{
+            //    EnrollmentDate = dateGroup.Key,
+            //    StudentCount = dateGroup.Count()
+            //};
 
-            return View(await data.AsNoTracking().ToListAsync());
+            //return View(await data.AsNoTracking().ToListAsync());
+            List<EnrollmentDateGroup> groups = new List<EnrollmentDateGroup>();
+            var conn = _context.Database.GetDbConnection();
+            try
+            {
+                await conn.OpenAsync();
+                using (var command = conn.CreateCommand())
+                {
+                    string query = "SELECT EnrollmentDate, COUNT(*) AS StudentCount "
+                        + "FROM Person "
+                        + "WHERE Discriminator = 'Student' "
+                        + "GROUP BY EnrollmentDate";
+                    command.CommandText = query;
+                    DbDataReader reader = await command.ExecuteReaderAsync();
+
+                    if (reader.HasRows)
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            var row = new EnrollmentDateGroup { EnrollmentDate = reader.GetDateTime(0), StudentCount = reader.GetInt32(1) };
+                            groups.Add(row);
+                        }
+                    }
+                    reader.Dispose();
+                }
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return View(groups);
         }
 
         public IActionResult Contact()
